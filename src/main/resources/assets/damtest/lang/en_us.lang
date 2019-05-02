@@ -1,0 +1,6 @@
+item.damtest.matter.name=Matter
+
+tile.damtest.fabricator.name=Matter Fabricator
+tile.damtest.extractor.name=Matter Extractor
+
+itemGroup.damtest=DimitrodAM Test

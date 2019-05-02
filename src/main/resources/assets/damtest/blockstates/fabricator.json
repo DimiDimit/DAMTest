@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "damtest:fabricator" },
+    "facing=south": { "model": "damtest:fabricator", "y": 180 },
+    "facing=west":  { "model": "damtest:fabricator", "y": 270 },
+    "facing=east":  { "model": "damtest:fabricator", "y": 90 }
+  }
+}

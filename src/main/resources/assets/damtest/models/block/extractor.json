@@ -1,0 +1,10 @@
+{
+  "parent": "block/orientable",
+  "textures": {
+    "particle": "damtest:blocks/machine",
+    "top": "damtest:blocks/machine",
+    "bottom": "damtest:blocks/machine",
+    "front": "damtest:blocks/extractor_front",
+    "side": "damtest:blocks/machine"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "ICI",
+    "III"  ],
+  "key": {
+    "I": [
+      {
+        "item": "minecraft:iron_ingot",
+        "data": 0
+      }
+    ],
+    "C": [
+      {
+        "item": "minecraft:cobblestone",
+        "data": 0
+      }
+    ]
+  },
+  "result": {
+    "item": "damtest:extractor",
+    "data": 0
+  }
+}

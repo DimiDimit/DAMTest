@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "MMM",
+    "MCM",
+    "MMM"  ],
+  "key": {
+    "M": [
+      {
+        "item": "damtest:matter",
+        "data": 0
+      }
+    ],
+    "C": [
+      {
+        "item": "minecraft:cobblestone",
+        "data": 0
+      }
+    ]
+  },
+  "result": {
+    "item": "damtest:fabricator",
+    "data": 0
+  }
+}

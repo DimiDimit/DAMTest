@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "damtest:extractor" },
+    "facing=south": { "model": "damtest:extractor", "y": 180 },
+    "facing=west":  { "model": "damtest:extractor", "y": 270 },
+    "facing=east":  { "model": "damtest:extractor", "y": 90 }
+  }
+}

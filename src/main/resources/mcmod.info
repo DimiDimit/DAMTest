@@ -1,0 +1,18 @@
+[
+{
+  "modid": "damtest",
+  "name": "DimitrodAM Test",
+  "description": "DimitrodAM's test mod, adds various things.",
+  "version": "1.0.0",
+  "mcversion": "1.12.2",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["DimiDimit", "PepiOnLine"],
+  "credits": "Code by DimiDimit, textures by PepiOnLine.",
+  "logoFile": "",
+  "screenshots": [],
+  "requiredMods": ["forgelin"],
+  "dependencies": ["forgelin", "jei"],
+  "useDependencyInformation": true
+}
+]
