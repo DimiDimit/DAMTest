@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:flint_and_steel",
+      "data": 0
+    },
+    {
+      "item": "minecraft:fire_charge",
+      "data": 0
+    }
+  ],
+  "result": {
+    "item": "damtest:entity_igniter",
+    "data": 0
+  }
+}

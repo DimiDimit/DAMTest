@@ -8,6 +8,6 @@ abstract class DTItem(registryName: String, tab: CreativeTabs = DAMTest.TAB_DT) 
 	init {
 		unlocalizedName = "${DAMTest.MODID}.$registryName"
 		setRegistryName(registryName)
-		setCreativeTab(tab)
+		creativeTab = tab
 	}
 }
