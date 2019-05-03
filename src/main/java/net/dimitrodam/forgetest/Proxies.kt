@@ -6,8 +6,7 @@ import net.dimitrodam.forgetest.container.ContainerExtractor
 import net.dimitrodam.forgetest.container.ContainerFabricator
 import net.dimitrodam.forgetest.guicontainer.GuiContainerExtractor
 import net.dimitrodam.forgetest.guicontainer.GuiContainerFabricator
-import net.dimitrodam.forgetest.item.ItemEntityIgniter
-import net.dimitrodam.forgetest.item.ItemMatter
+import net.dimitrodam.forgetest.item.*
 import net.dimitrodam.forgetest.tile.TileExtractor
 import net.dimitrodam.forgetest.tile.TileFabricator
 import net.minecraft.block.Block
@@ -54,6 +53,9 @@ abstract class Proxy {
 			event.registry.registerAll(
 					ItemMatter(),
 					ItemEntityIgniter(),
+					ItemHealthPack(),
+					ItemHungerPack(),
+					ItemMultiPack(),
 
 					ItemBlock(DTBlocks.fabricator).setRegistryName(DTBlocks.fabricator.registryName),
 					ItemBlock(DTBlocks.extractor).setRegistryName(DTBlocks.extractor.registryName)

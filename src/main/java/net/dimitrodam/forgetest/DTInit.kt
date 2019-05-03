@@ -2,8 +2,7 @@ package net.dimitrodam.forgetest
 
 import net.dimitrodam.forgetest.block.BlockExtractor
 import net.dimitrodam.forgetest.block.BlockFabricator
-import net.dimitrodam.forgetest.item.ItemEntityIgniter
-import net.dimitrodam.forgetest.item.ItemMatter
+import net.dimitrodam.forgetest.item.*
 import net.minecraft.client.renderer.block.model.ModelResourceLocation
 import net.minecraft.item.Item.getItemFromBlock
 import net.minecraftforge.client.model.ModelLoader
@@ -42,13 +41,25 @@ object DTItems {
 	@JvmStatic
 	@GameRegistry.ObjectHolder("${DAMTest.MODID}:entity_igniter")
 	lateinit var entityIgniter: ItemEntityIgniter
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:health_pack")
+	lateinit var healthPack: ItemHealthPack
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:hunger_pack")
+	lateinit var hungerPack: ItemHungerPack
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:multi_pack")
+	lateinit var multiPack: ItemMultiPack
 
 	@JvmStatic
 	@SideOnly(Side.CLIENT)
 	fun initModels() {
 		for(i in arrayOf(
 				matter,
-				entityIgniter
+				entityIgniter,
+				healthPack,
+				hungerPack,
+				multiPack
 		)) {
 			ModelLoader.setCustomModelResourceLocation(
 					i, 0, ModelResourceLocation(i.registryName!!, "inventory")

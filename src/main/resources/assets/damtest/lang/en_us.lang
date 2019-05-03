@@ -1,5 +1,8 @@
 item.damtest.matter.name=Matter
 item.damtest.entity_igniter.name=Block & Entity Igniter
+item.damtest.health_pack.name=Health Pack
+item.damtest.hunger_pack.name=Hunger Pack
+item.damtest.multi_pack.name=Multi Pack
 
 tile.damtest.fabricator.name=Matter Fabricator
 tile.damtest.extractor.name=Matter Extractor
