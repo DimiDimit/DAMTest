@@ -56,6 +56,7 @@ abstract class Proxy {
 					ItemHealthPack(),
 					ItemHungerPack(),
 					ItemMultiPack(),
+					ItemCreativeDestroyer(),
 
 					ItemBlock(DTBlocks.fabricator).setRegistryName(DTBlocks.fabricator.registryName),
 					ItemBlock(DTBlocks.extractor).setRegistryName(DTBlocks.extractor.registryName)

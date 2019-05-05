@@ -50,6 +50,9 @@ object DTItems {
 	@JvmStatic
 	@GameRegistry.ObjectHolder("${DAMTest.MODID}:multi_pack")
 	lateinit var multiPack: ItemMultiPack
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:creative_destroyer")
+	lateinit var creativeDestroyer: ItemCreativeDestroyer
 
 	@JvmStatic
 	@SideOnly(Side.CLIENT)
@@ -59,7 +62,8 @@ object DTItems {
 				entityIgniter,
 				healthPack,
 				hungerPack,
-				multiPack
+				multiPack,
+				creativeDestroyer
 		)) {
 			ModelLoader.setCustomModelResourceLocation(
 					i, 0, ModelResourceLocation(i.registryName!!, "inventory")
