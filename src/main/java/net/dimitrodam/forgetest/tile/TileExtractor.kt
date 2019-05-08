@@ -1,11 +1,9 @@
 package net.dimitrodam.forgetest.tile
 
 import net.dimitrodam.forgetest.DTItems
-import net.dimitrodam.forgetest.ExtractorRecipe
+import net.dimitrodam.forgetest.IExtractorRecipe
 import net.dimitrodam.forgetest.util.RestrictedItemStackHandler
-import net.minecraft.init.Items
 import net.minecraft.item.ItemStack
-import net.minecraft.item.crafting.IRecipe
 import net.minecraft.nbt.NBTTagCompound
 import net.minecraft.tileentity.TileEntity
 import net.minecraft.util.EnumFacing
@@ -18,16 +16,24 @@ class TileExtractor : TileEntity() {
 	companion object {
 		const val SIZE = 2
 
-		val RECIPES: Array<IRecipe> = arrayOf(
-				ExtractorRecipe("extractor_coal", ItemStack(DTItems.matter, 1), ItemStack(Items.COAL)),
-				ExtractorRecipe("extractor_charcoal", ItemStack(DTItems.matter, 1), ItemStack(Items.COAL, 1, 1)),
+		/*val RECIPES: Array<IRecipe> = arrayOf(
+				ExtractorRecipe("extractor_coal", ItemStack(DTItems.matter, 1), arrayOf(ItemStack(Items.COAL), ItemStack(Items.COAL, 1, 1))),
+				ExtractorRecipe("extractor_coal_block", ItemStack(DTItems.matter, 1*9), ItemStack(Blocks.COAL_BLOCK)),
 				ExtractorRecipe("extractor_redstone", ItemStack(DTItems.matter, 2), ItemStack(Items.REDSTONE)),
+				ExtractorRecipe("extractor_redstone_block", ItemStack(DTItems.matter, 2*9), ItemStack(Blocks.REDSTONE_BLOCK)),
 				ExtractorRecipe("extractor_lapis", ItemStack(DTItems.matter, 2), ItemStack(Items.DYE, 1, 4)),
+				ExtractorRecipe("extractor_lapis_block", ItemStack(DTItems.matter, 2*9), ItemStack(Blocks.LAPIS_BLOCK)),
 				ExtractorRecipe("extractor_iron", ItemStack(DTItems.matter, 3), ItemStack(Items.IRON_INGOT)),
+				ExtractorRecipe("extractor_iron_block", ItemStack(DTItems.matter, 3*9), ItemStack(Blocks.IRON_BLOCK)),
+				ExtractorRecipe("extractor_copper", ItemStack(DTItems.matter, 4), OreIngredient("ingotCopper")),
 				ExtractorRecipe("extractor_gold", ItemStack(DTItems.matter, 5), ItemStack(Items.GOLD_INGOT)),
+				ExtractorRecipe("extractor_gold_block", ItemStack(DTItems.matter, 5*9), ItemStack(Blocks.GOLD_BLOCK)),
 				ExtractorRecipe("extractor_diamond", ItemStack(DTItems.matter, 15), ItemStack(Items.DIAMOND)),
-				ExtractorRecipe("extractor_emerald", ItemStack(DTItems.matter, 20), ItemStack(Items.EMERALD))
-		)
+				ExtractorRecipe("extractor_diamond_block", ItemStack(DTItems.matter, 15*9), ItemStack(Blocks.DIAMOND_BLOCK)),
+				ExtractorRecipe("extractor_emerald", ItemStack(DTItems.matter, 20), ItemStack(Items.EMERALD)),
+				ExtractorRecipe("extractor_emerald_block", ItemStack(DTItems.matter, 20*9), ItemStack(Blocks.EMERALD_BLOCK))
+		)*/
+		val RECIPES = mutableListOf<IExtractorRecipe>()
 	}
 
 	private val baseItemStackHandler = object : ItemStackHandler(SIZE) {
@@ -37,7 +43,7 @@ class TileExtractor : TileEntity() {
 				for(recipe in RECIPES) {
 					val index = recipe.ingredients[0].matchingStacks.find { stacks[0].item == it.item && stacks[0].metadata == it.metadata }
 					if(index != null) {
-						given = recipe.recipeOutput.count
+						given = recipe.ingredients[1].matchingStacks[0].count
 					}
 				}
 				if(given != null) {

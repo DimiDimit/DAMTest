@@ -1,5 +1,6 @@
 package net.dimitrodam.forgetest
 
+import net.dimitrodam.forgetest.tile.TileFabricator
 import net.minecraft.block.material.MapColor
 import net.minecraft.block.material.Material
 import net.minecraft.creativetab.CreativeTabs
@@ -56,6 +57,7 @@ object DAMTest {
 	@Mod.EventHandler
 	fun init(event: FMLInitializationEvent) {
 		proxy.init(event)
+		TileFabricator.initRecipes()
 	}
 	@JvmStatic
 	@Mod.EventHandler

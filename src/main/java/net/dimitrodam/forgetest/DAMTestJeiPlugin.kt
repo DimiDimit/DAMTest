@@ -30,14 +30,14 @@ class FabricatorRecipeCategory(guiHelper: IGuiHelper) : IRecipeCategory<Fabricat
 	override fun getBackground(): IDrawable = mBackground
 
 	override fun setRecipe(recipeLayout: IRecipeLayout, recipeWrapper: FabricatorRecipeWrapper, ingredients: IIngredients) {
-//		val inputs = ingredients.getInputs(VanillaTypes.ITEM)
+		val inputs = ingredients.getInputs(VanillaTypes.ITEM)
 		recipeLayout.itemStacks.init(0, true, 0, 3) // 0)
-//		recipeLayout.itemStacks.set(0, inputs[0])
+		recipeLayout.itemStacks.set(0, inputs[0])
 //		recipeLayout.itemStacks.init(1, true, 0, 36)
 //		recipeLayout.itemStacks.set(1, inputs[1])
 		recipeLayout.itemStacks.init(1, false, 60, 4) // 18)
-//		recipeLayout.itemStacks.set(2, ingredients.getOutputs(VanillaTypes.ITEM)[0])
-		recipeLayout.itemStacks.set(ingredients)
+		recipeLayout.itemStacks.set(1, inputs[1])
+//		recipeLayout.itemStacks.set(ingredients)
 	}
 }
 class ExtractorRecipeCategory(guiHelper: IGuiHelper) : IRecipeCategory<ExtractorRecipeWrapper> {
@@ -54,12 +54,12 @@ class ExtractorRecipeCategory(guiHelper: IGuiHelper) : IRecipeCategory<Extractor
 	override fun getBackground(): IDrawable = mBackground
 
 	override fun setRecipe(recipeLayout: IRecipeLayout, recipeWrapper: ExtractorRecipeWrapper, ingredients: IIngredients) {
-//		val inputs = ingredients.getInputs(VanillaTypes.ITEM)
+		val inputs = ingredients.getInputs(VanillaTypes.ITEM)
 		recipeLayout.itemStacks.init(0, true, 0, 3)
-//		recipeLayout.itemStacks.set(0, inputs[0])
+		recipeLayout.itemStacks.set(0, inputs[0])
 		recipeLayout.itemStacks.init(1, false, 60, 4)
-//		recipeLayout.itemStacks.set(1, ingredients.getOutputs(VanillaTypes.ITEM)[0])
-		recipeLayout.itemStacks.set(ingredients)
+		recipeLayout.itemStacks.set(1, inputs[1])
+//		recipeLayout.itemStacks.set(ingredients)
 	}
 }
 class FabricatorRecipeWrapper(val recipe: IFabricatorRecipe) : IRecipeWrapper {
@@ -80,19 +80,25 @@ class ExtractorRecipeWrapper(val recipe: IExtractorRecipe) : IRecipeWrapper {
 }
 interface IFabricatorRecipe : IRecipe
 interface IExtractorRecipe : IRecipe
-class FabricatorRecipe(registryName: String, output: ItemStack, mIngredients: NonNullList<Ingredient>) : GenericRecipe(registryName, output, mIngredients), IFabricatorRecipe {
-	constructor(registryName: String, output: ItemStack, vararg mIngredients: ItemStack) : this(registryName, output, NonNullList.from<Ingredient>(Ingredient.EMPTY, *(mIngredients.map { Ingredient.fromStacks(it) }.toTypedArray())))
-	constructor(registryName: String, output: Item, vararg mIngredients: Item) : this(registryName, ItemStack(output), *(mIngredients.map { ItemStack(it) }.toTypedArray()))
+class FabricatorRecipe(registryName: String, mIngredients: NonNullList<Ingredient>) : GenericRecipe(registryName, mIngredients), IFabricatorRecipe {
+	constructor(registryName: String, vararg mIngredients: ItemStack) : this(registryName, NonNullList.from<Ingredient>(Ingredient.EMPTY, *(mIngredients.map { Ingredient.fromStacks(it) }.toTypedArray())))
+	constructor(registryName: String, vararg mIngredients: Item) : this(registryName, *(mIngredients.map { ItemStack(it) }.toTypedArray()))
+	constructor(registryName: String, vararg mIngredients: Array<out ItemStack>) : this(registryName, NonNullList.from<Ingredient>(Ingredient.EMPTY, *(mIngredients.map { Ingredient.fromStacks(*it) }.toTypedArray())))
+	constructor(registryName: String, vararg mIngredients: Ingredient) : this(registryName, NonNullList.from<Ingredient>(Ingredient.EMPTY, *mIngredients))
 }
-class ExtractorRecipe(registryName: String, output: ItemStack, mIngredients: NonNullList<Ingredient>) : GenericRecipe(registryName, output, mIngredients), IExtractorRecipe {
-	constructor(registryName: String, output: ItemStack, vararg mIngredients: ItemStack) : this(registryName, output, NonNullList.from<Ingredient>(Ingredient.EMPTY, *(mIngredients.map { Ingredient.fromStacks(it) }.toTypedArray())))
-	constructor(registryName: String, output: Item, vararg mIngredients: Item) : this(registryName, ItemStack(output), *(mIngredients.map { ItemStack(it) }.toTypedArray()))
+class ExtractorRecipe(registryName: String, mIngredients: NonNullList<Ingredient>) : GenericRecipe(registryName, mIngredients), IExtractorRecipe {
+	constructor(registryName: String, vararg mIngredients: ItemStack) : this(registryName, NonNullList.from<Ingredient>(Ingredient.EMPTY, *(mIngredients.map { Ingredient.fromStacks(it) }.toTypedArray())))
+	constructor(registryName: String, vararg mIngredients: Item) : this(registryName, *(mIngredients.map { ItemStack(it) }.toTypedArray()))
+	constructor(registryName: String, vararg mIngredients: Array<out ItemStack>) : this(registryName, NonNullList.from<Ingredient>(Ingredient.EMPTY, *(mIngredients.map { Ingredient.fromStacks(*it) }.toTypedArray())))
+	constructor(registryName: String, vararg mIngredients: Ingredient) : this(registryName, NonNullList.from<Ingredient>(Ingredient.EMPTY, *mIngredients))
 }
-open class GenericRecipe(registryName: String, val output: ItemStack, val mIngredients: NonNullList<Ingredient>) : IRecipe {
+open class GenericRecipe(registryName: String, val mIngredients: NonNullList<Ingredient>) : IRecipe {
 	var mRegistryName: ResourceLocation? = ResourceLocation(DAMTest.MODID, registryName)
 
-	constructor(registryName: String, output: ItemStack, vararg mIngredients: ItemStack) : this(registryName, output, NonNullList.from<Ingredient>(Ingredient.EMPTY, *(mIngredients.map { Ingredient.fromStacks(it) }.toTypedArray())))
-	constructor(registryName: String, output: Item, vararg mIngredients: Item) : this(registryName, ItemStack(output), *(mIngredients.map { ItemStack(it) }.toTypedArray()))
+	constructor(registryName: String, vararg mIngredients: ItemStack) : this(registryName, NonNullList.from<Ingredient>(Ingredient.EMPTY, *(mIngredients.map { Ingredient.fromStacks(it) }.toTypedArray())))
+	constructor(registryName: String, vararg mIngredients: Item) : this(registryName, *(mIngredients.map { ItemStack(it) }.toTypedArray()))
+	constructor(registryName: String, vararg mIngredients: Array<out ItemStack>) : this(registryName, NonNullList.from<Ingredient>(Ingredient.EMPTY, *(mIngredients.map { Ingredient.fromStacks(*it) }.toTypedArray())))
+	constructor(registryName: String, vararg mIngredients: Ingredient) : this(registryName, NonNullList.from<Ingredient>(Ingredient.EMPTY, *mIngredients))
 
 	override fun canFit(p0: Int, p1: Int): Boolean {
 		TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
@@ -112,6 +118,6 @@ open class GenericRecipe(registryName: String, val output: ItemStack, val mIngre
 		TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
 	}
 
-	override fun getRecipeOutput(): ItemStack = output
+	override fun getRecipeOutput(): ItemStack = ItemStack.EMPTY // null
 	override fun getIngredients(): NonNullList<Ingredient> = mIngredients
 }

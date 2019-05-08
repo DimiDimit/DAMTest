@@ -1,5 +1,8 @@
+#PARSE_ESCAPES
+
 item.damtest.matter.name=Matter
 item.damtest.entity_igniter.name=Block & Entity Igniter
+item.damtest.creative_destroyer.name=Creative Destroyer
 item.damtest.health_pack.name=Health Pack
 item.damtest.hunger_pack.name=Hunger Pack
 item.damtest.multi_pack.name=Multi Pack
@@ -8,3 +11,13 @@ tile.damtest.fabricator.name=Matter Fabricator
 tile.damtest.extractor.name=Matter Extractor
 
 itemGroup.damtest=DimitrodAM Test
+
+#damtest.config.title=DimitrodAM Test Config
+damtest.config.matter_config=Matter Recipes
+damtest.config.matter_config.tooltip=Configure matter recipes for the Matter Extractor and the Matter Fabricator.
+damtest.config.matter_config.raw_oredict=Raw Oredict
+damtest.config.matter_config.raw_oredict.tooltip=Ore dictionary with the name exactly as specified.
+damtest.config.matter_config.rb_oredict=RB Oredict
+damtest.config.matter_config.rb_oredict.tooltip=Ore dictionary with raw and block prefix (will automatically become lowercase raw and capitalized with block).
+damtest.config.matter_config.ndiggb_oredict=NDIGGB Oredict
+damtest.config.matter_config.ndiggb_oredict.tooltip=Ore dictionary with Nugget(1/9), Dust(1), Ingot(1), Gem (1), Gear(4) and Block(9).
