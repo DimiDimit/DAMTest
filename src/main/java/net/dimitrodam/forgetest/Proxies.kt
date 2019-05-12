@@ -1,3 +1,5 @@
+@file:Suppress("UNUSED_PARAMETER")
+
 package net.dimitrodam.forgetest
 
 import net.dimitrodam.forgetest.block.BlockExtractor
@@ -6,13 +8,17 @@ import net.dimitrodam.forgetest.container.ContainerExtractor
 import net.dimitrodam.forgetest.container.ContainerFabricator
 import net.dimitrodam.forgetest.guicontainer.GuiContainerExtractor
 import net.dimitrodam.forgetest.guicontainer.GuiContainerFabricator
-import net.dimitrodam.forgetest.item.*
+import net.dimitrodam.forgetest.item.ItemCreativeDestroyer
+import net.dimitrodam.forgetest.item.ItemEntityIgniter
+import net.dimitrodam.forgetest.item.ItemMatter
+import net.dimitrodam.forgetest.item.ItemPack
 import net.dimitrodam.forgetest.tile.TileExtractor
 import net.dimitrodam.forgetest.tile.TileFabricator
 import net.minecraft.block.Block
 import net.minecraft.entity.player.EntityPlayer
 import net.minecraft.item.Item
 import net.minecraft.item.ItemBlock
+import net.minecraft.item.crafting.IRecipe
 import net.minecraft.util.ResourceLocation
 import net.minecraft.util.math.BlockPos
 import net.minecraft.world.World
@@ -53,13 +59,18 @@ abstract class Proxy {
 			event.registry.registerAll(
 					ItemMatter(),
 					ItemEntityIgniter(),
-					ItemHealthPack(),
-					ItemHungerPack(),
-					ItemMultiPack(),
 					ItemCreativeDestroyer(),
+					ItemPack(),
 
 					ItemBlock(DTBlocks.fabricator).setRegistryName(DTBlocks.fabricator.registryName),
 					ItemBlock(DTBlocks.extractor).setRegistryName(DTBlocks.extractor.registryName)
+			)
+		}
+		@JvmStatic
+		@SubscribeEvent
+		fun registerRecipes(event: RegistryEvent.Register<IRecipe>) {
+			event.registry.registerAll(
+					ItemPack.CombinationRecipe()
 			)
 		}
 	}

@@ -3,9 +3,10 @@
 item.damtest.matter.name=Matter
 item.damtest.entity_igniter.name=Block & Entity Igniter
 item.damtest.creative_destroyer.name=Creative Destroyer
-item.damtest.health_pack.name=Health Pack
-item.damtest.hunger_pack.name=Hunger Pack
-item.damtest.multi_pack.name=Multi Pack
+item.damtest.pack.name=Pack
+item.damtest.pack.info=You can combine packs in the crafting grid.
+item.damtest.pack.health=Health
+item.damtest.pack.hunger=Hunger
 
 tile.damtest.fabricator.name=Matter Fabricator
 tile.damtest.extractor.name=Matter Extractor

@@ -10,7 +10,7 @@ import net.minecraftforge.items.IItemHandler
 import net.minecraftforge.items.SlotItemHandler
 
 
-abstract class DTContainer(playerInventory: IInventory, val te: TileEntity, val size: Int) : Container() {
+abstract class DTContainer(@Suppress("UNUSED_PARAMETER") playerInventory: IInventory, val te: TileEntity, val size: Int) : Container() {
 	override fun canInteractWith(playerIn: EntityPlayer): Boolean = true
 
 	override fun transferStackInSlot(playerIn: EntityPlayer, index: Int): ItemStack {

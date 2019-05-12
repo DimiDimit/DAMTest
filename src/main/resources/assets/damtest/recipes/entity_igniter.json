@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "minecraft:flint_and_steel",
+      "item": "minecraft:lava_bucket",
       "data": 0
     },
     {
-      "item": "minecraft:fire_charge",
+      "item": "minecraft:gold_ingot",
       "data": 0
     }
   ],

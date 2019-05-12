@@ -24,7 +24,7 @@ import org.apache.logging.log4j.Logger
 object DAMTest {
 	const val MODID = "damtest"
 	const val NAME = "DimitrodAM Test"
-	const val VERSION = "1.0.0"
+	const val VERSION = "1.12.2-1.0.0.0"
 	const val ACCEPTED_MINECRAFT_VERSIONS = "[1.12.2]"
 
 	@JvmStatic

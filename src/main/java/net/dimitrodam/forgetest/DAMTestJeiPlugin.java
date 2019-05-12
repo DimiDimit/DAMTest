@@ -4,6 +4,7 @@ import mezz.jei.api.IGuiHelper;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.IModRegistry;
 import mezz.jei.api.JEIPlugin;
+import mezz.jei.api.ingredients.VanillaTypes;
 import mezz.jei.api.recipe.IRecipeCategoryRegistration;
 import net.dimitrodam.forgetest.guicontainer.GuiContainerExtractor;
 import net.dimitrodam.forgetest.guicontainer.GuiContainerFabricator;
@@ -32,5 +33,7 @@ public class DAMTestJeiPlugin implements IModPlugin {
 
         registry.addRecipeClickArea(GuiContainerExtractor.class, 78, 32, 28, 23, ExtractorRecipeCategory.NAME);
         registry.addRecipeClickArea(GuiContainerFabricator.class, 78, 32, 28, 23, FabricatorRecipeCategory.NAME);
+
+        registry.addIngredientInfo(new ItemStack(DTItems.pack), VanillaTypes.ITEM, "item.damtest.pack.info");
     }
 }

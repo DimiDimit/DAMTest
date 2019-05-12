@@ -30,10 +30,10 @@ class ItemCreativeDestroyer : DTItem("creative_destroyer") {
 			return EnumActionResult.PASS*/
 		if(!worldIn.isRemote) {
 			if(EnchantmentHelper.getEnchantments(stack)[Enchantments.SILK_TOUCH] != null) {
-				val state = worldIn.getBlockState(pos)
+				val block = worldIn.getBlockState(pos).block
 				worldIn.destroyBlock(pos, false)
 				// FIXME: Handle metadata. For example, when you break tallgrass you get a shrub. This is important because mods like Thermal Expansion use metadata to distinguish between different materials, e.g. copper vs platinum.
-				worldIn.spawnEntity(EntityItem(worldIn, pos.x.toDouble()+0.5, pos.y.toDouble()+0.5, pos.z.toDouble()+0.5, ItemStack(state.block)))
+				worldIn.spawnEntity(EntityItem(worldIn, pos.x.toDouble()+0.5, pos.y.toDouble()+0.5, pos.z.toDouble()+0.5, ItemStack(getItemFromBlock(block))))
 			} else worldIn.destroyBlock(pos, true)
 		}
 		return EnumActionResult.SUCCESS
@@ -69,7 +69,6 @@ class ItemCreativeDestroyer : DTItem("creative_destroyer") {
 	override fun isEnchantable(stack: ItemStack): Boolean = true
 	override fun getItemEnchantability(): Int = 15
 	override fun canApplyAtEnchantingTable(stack: ItemStack, enchantment: Enchantment): Boolean {
-		// FIXME: Cannot enchant in an enchantment table.
 		if(enchantment == Enchantments.SILK_TOUCH)
 			return true
 		return super.canApplyAtEnchantingTable(stack, enchantment)
