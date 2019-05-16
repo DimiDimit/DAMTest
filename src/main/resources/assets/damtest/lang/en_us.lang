@@ -5,11 +5,22 @@ item.damtest.entity_igniter.name=Block & Entity Igniter
 item.damtest.creative_destroyer.name=Creative Destroyer
 item.damtest.pack.name=Pack
 item.damtest.pack.info=You can combine packs in the crafting grid.
+item.damtest.pack.target.self=Self
+item.damtest.pack.target.rightclick=Right-click
 item.damtest.pack.health=Health
 item.damtest.pack.hunger=Hunger
+item.damtest.pack.fire=Fire
+item.damtest.pack.extinguish=Extinguish
+item.damtest.pack.day=Day
+item.damtest.pack.night=Night
+item.damtest.rainbow_ingot.name=Rainbow Ingot
+item.damtest.rainbow_sword.name=Rainbow Sword
 
 tile.damtest.fabricator.name=Matter Fabricator
 tile.damtest.extractor.name=Matter Extractor
+tile.damtest.matter_block.name=Block of Matter
+tile.damtest.rainbow_block.name=Block of Rainbow
+tile.damtest.rainbow_ore.name=Rainbow Ore
 
 itemGroup.damtest=DimitrodAM Test
 

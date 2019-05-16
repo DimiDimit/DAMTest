@@ -6,6 +6,7 @@ import net.minecraft.block.material.Material
 import net.minecraft.creativetab.CreativeTabs
 import net.minecraft.init.Items
 import net.minecraft.item.ItemStack
+import net.minecraftforge.common.util.EnumHelper
 import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.common.SidedProxy
@@ -44,6 +45,8 @@ object DAMTest {
 
 	//region Materials
 	val MATERIAL_ROCK_HAND = Material(MapColor.STONE)
+
+	val TOOL_MATERIAL_RAINBOW = EnumHelper.addToolMaterial("rainbow", 4, 6000, 14.0F, 6.0F, 30)!!
 	//endregion
 
 	//region Initialization Events

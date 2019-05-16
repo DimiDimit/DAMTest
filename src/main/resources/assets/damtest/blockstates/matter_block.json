@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "normal": { "model": "damtest:matter_block" }
+  }
+}

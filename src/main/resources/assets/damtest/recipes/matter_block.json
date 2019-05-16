@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "III",
+    "III"  ],
+  "key": {
+    "I": [
+      {
+        "item": "damtest:matter",
+        "data": 0
+      }
+    ]
+  },
+  "result": {
+    "item": "damtest:matter_block",
+    "data": 0
+  }
+}

@@ -2,16 +2,12 @@
 
 package net.dimitrodam.forgetest
 
-import net.dimitrodam.forgetest.block.BlockExtractor
-import net.dimitrodam.forgetest.block.BlockFabricator
+import net.dimitrodam.forgetest.block.*
 import net.dimitrodam.forgetest.container.ContainerExtractor
 import net.dimitrodam.forgetest.container.ContainerFabricator
 import net.dimitrodam.forgetest.guicontainer.GuiContainerExtractor
 import net.dimitrodam.forgetest.guicontainer.GuiContainerFabricator
-import net.dimitrodam.forgetest.item.ItemCreativeDestroyer
-import net.dimitrodam.forgetest.item.ItemEntityIgniter
-import net.dimitrodam.forgetest.item.ItemMatter
-import net.dimitrodam.forgetest.item.ItemPack
+import net.dimitrodam.forgetest.item.*
 import net.dimitrodam.forgetest.tile.TileExtractor
 import net.dimitrodam.forgetest.tile.TileFabricator
 import net.minecraft.block.Block
@@ -33,12 +29,18 @@ import net.minecraftforge.fml.common.network.IGuiHandler
 import net.minecraftforge.fml.common.network.NetworkRegistry
 import net.minecraftforge.fml.common.registry.GameRegistry
 import net.minecraftforge.fml.relauncher.Side
+import net.minecraftforge.oredict.OreDictionary
 
 @Mod.EventBusSubscriber
 abstract class Proxy {
-	fun preInit(event: FMLPreInitializationEvent) {}
+	fun preInit(event: FMLPreInitializationEvent) {
+		GameRegistry.registerWorldGenerator(DTWorldGen(), 3)
+	}
 	fun init(event: FMLInitializationEvent) {
 		NetworkRegistry.INSTANCE.registerGuiHandler(DAMTest.instance, GuiProxy)
+		OreDictionary.registerOre("oreRainbow", DTBlocks.rainbowOre)
+		OreDictionary.registerOre("ingotRainbow", DTItems.rainbowIngot)
+		OreDictionary.registerOre("blockRainbow", DTBlocks.rainbowBlock)
 	}
 	fun postInit(event: FMLPostInitializationEvent) {}
 
@@ -48,7 +50,10 @@ abstract class Proxy {
 		fun registerBlocks(event: RegistryEvent.Register<Block>) {
 			event.registry.registerAll(
 					BlockFabricator(),
-					BlockExtractor()
+					BlockExtractor(),
+					BlockMatter(),
+					BlockRainbowOre(),
+					BlockRainbow()
 			)
 			GameRegistry.registerTileEntity(TileFabricator::class.java, ResourceLocation(DAMTest.MODID, "fabricator"))
 			GameRegistry.registerTileEntity(TileExtractor::class.java, ResourceLocation(DAMTest.MODID, "extractor"))
@@ -61,16 +66,22 @@ abstract class Proxy {
 					ItemEntityIgniter(),
 					ItemCreativeDestroyer(),
 					ItemPack(),
+					ItemRainbowIngot(),
+					ItemRainbowSword(),
 
 					ItemBlock(DTBlocks.fabricator).setRegistryName(DTBlocks.fabricator.registryName),
-					ItemBlock(DTBlocks.extractor).setRegistryName(DTBlocks.extractor.registryName)
+					ItemBlock(DTBlocks.extractor).setRegistryName(DTBlocks.extractor.registryName),
+					ItemBlock(DTBlocks.matterBlock).setRegistryName(DTBlocks.matterBlock.registryName),
+					ItemBlock(DTBlocks.rainbowOre).setRegistryName(DTBlocks.rainbowOre.registryName),
+					ItemBlock(DTBlocks.rainbowBlock).setRegistryName(DTBlocks.rainbowBlock.registryName)
 			)
 		}
 		@JvmStatic
 		@SubscribeEvent
 		fun registerRecipes(event: RegistryEvent.Register<IRecipe>) {
 			event.registry.registerAll(
-					ItemPack.CombinationRecipe()
+					ItemPack.CombinationRecipe(),
+					ItemPack.TargetRecipe()
 			)
 		}
 	}
