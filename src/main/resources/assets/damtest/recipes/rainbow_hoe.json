@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "RSR",
+    "RDR",
+    "SHS"  ],
+  "key": {
+    "R": [
+      {
+        "item": "damtest:rainbow_ingot",
+        "data": 0
+      }
+    ],
+    "D": [
+      {
+        "item": "minecraft:diamond",
+        "data": 0
+      }
+    ],
+    "H": [
+      {
+        "item": "minecraft:diamond_hoe",
+        "data": 0
+      }
+    ],
+    "S": [
+      {
+        "type": "forge:ore_dict",
+        "ore": "seedWheat"
+      }
+    ]
+  },
+  "result": {
+    "item": "damtest:rainbow_hoe",
+    "data": 0
+  }
+}

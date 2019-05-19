@@ -62,7 +62,7 @@ class ItemPack : DTItem(REGISTRY_NAME) {
 			return setAction(ItemStack(DTItems.pack), strings.joinToString(separator = ","), stacks[0].tagCompound?.getString(TARGET) ?: "self")
 		}
 
-		override fun matches(inv: InventoryCrafting, worldIn: World): Boolean {
+		override fun matches(inv: InventoryCrafting, worldIn: World?): Boolean {
 			var found = 0
 			for(i in 0 until inv.sizeInventory) {
 				if(inv.getStackInSlot(i).item == DTItems.pack)
@@ -107,7 +107,7 @@ class ItemPack : DTItem(REGISTRY_NAME) {
 			return setAction(ItemStack(DTItems.pack), pack.tagCompound?.getString(ACTIONS), target)
 		}
 
-		override fun matches(inv: InventoryCrafting, worldIn: World): Boolean {
+		override fun matches(inv: InventoryCrafting, worldIn: World?): Boolean {
 			var foundPack = false
 			var foundTarget = false
 			for(i in 0 until inv.sizeInventory) {

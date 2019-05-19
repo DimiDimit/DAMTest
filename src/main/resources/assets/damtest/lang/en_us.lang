@@ -14,7 +14,16 @@ item.damtest.pack.extinguish=Extinguish
 item.damtest.pack.day=Day
 item.damtest.pack.night=Night
 item.damtest.rainbow_ingot.name=Rainbow Ingot
+item.damtest.rainbow_nugget.name=Rainbow Nugget
 item.damtest.rainbow_sword.name=Rainbow Sword
+item.damtest.rainbow_pickaxe.name=Rainbow Pickaxe
+item.damtest.rainbow_axe.name=Rainbow Axe
+item.damtest.rainbow_shovel.name=Rainbow Shovel
+item.damtest.rainbow_hoe.name=Rainbow Hoe
+item.damtest.rainbow_helmet.name=Rainbow Helmet
+item.damtest.rainbow_chestplate.name=Rainbow Chestplate
+item.damtest.rainbow_leggings.name=Rainbow Leggings
+item.damtest.rainbow_boots.name=Rainbow Boots
 
 tile.damtest.fabricator.name=Matter Fabricator
 tile.damtest.extractor.name=Matter Extractor
@@ -23,6 +32,8 @@ tile.damtest.rainbow_block.name=Block of Rainbow
 tile.damtest.rainbow_ore.name=Rainbow Ore
 
 itemGroup.damtest=DimitrodAM Test
+
+entity.rainbow_pig.name=Rainbow Pig
 
 #damtest.config.title=DimitrodAM Test Config
 damtest.config.matter_config=Matter Recipes

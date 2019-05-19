@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "R R",
+    "R R"  ],
+  "key": {
+    "R": [
+      {
+        "item": "damtest:rainbow_ingot",
+        "data": 0
+      }
+    ]
+  },
+  "result": {
+    "item": "damtest:rainbow_boots",
+    "data": 0
+  }
+}

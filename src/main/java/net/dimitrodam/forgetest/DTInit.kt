@@ -72,8 +72,35 @@ object DTItems {
 	@GameRegistry.ObjectHolder("${DAMTest.MODID}:rainbow_ingot")
 	lateinit var rainbowIngot: ItemRainbowIngot
 	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:rainbow_nugget")
+	lateinit var rainbowNugget: ItemRainbowNugget
+	@JvmStatic
 	@GameRegistry.ObjectHolder("${DAMTest.MODID}:rainbow_sword")
 	lateinit var rainbowSword: ItemSword
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:rainbow_pickaxe")
+	lateinit var rainbowPickaxe: ItemRainbowPickaxe
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:rainbow_axe")
+	lateinit var rainbowAxe: ItemRainbowAxe
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:rainbow_shovel")
+	lateinit var rainbowShovel: ItemRainbowShovel
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:rainbow_hoe")
+	lateinit var rainbowHoe: ItemRainbowHoe
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:rainbow_helmet")
+	lateinit var rainbowHelmet: ItemRainbowArmor
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:rainbow_chestplate")
+	lateinit var rainbowChestplate: ItemRainbowArmor
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:rainbow_leggings")
+	lateinit var rainbowLeggings: ItemRainbowArmor
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:rainbow_boots")
+	lateinit var rainbowBoots: ItemRainbowArmor
 
 	@JvmStatic
 	@SideOnly(Side.CLIENT)
@@ -83,7 +110,16 @@ object DTItems {
 				entityIgniter,
 				creativeDestroyer,
 				rainbowIngot,
-				rainbowSword
+				rainbowNugget,
+				rainbowSword,
+				rainbowPickaxe,
+				rainbowAxe,
+				rainbowShovel,
+				rainbowHoe,
+				rainbowHelmet,
+				rainbowChestplate,
+				rainbowLeggings,
+				rainbowBoots
 		)) {
 			ModelLoader.setCustomModelResourceLocation(
 					i, 0, ModelResourceLocation(i.registryName!!, "inventory")

@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "RDR",
+    "RDR",
+    "RSR"  ],
+  "key": {
+    "R": [
+      {
+        "item": "damtest:rainbow_ingot",
+        "data": 0
+      }
+    ],
+    "D": [
+      {
+        "item": "minecraft:diamond",
+        "data": 0
+      }
+    ],
+    "S": [
+      {
+        "item": "minecraft:diamond_shovel",
+        "data": 0
+      }
+    ]
+  },
+  "result": {
+    "item": "damtest:rainbow_shovel",
+    "data": 0
+  }
+}
