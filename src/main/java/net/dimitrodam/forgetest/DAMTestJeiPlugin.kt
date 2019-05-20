@@ -100,23 +100,15 @@ open class GenericRecipe(registryName: String, val mIngredients: NonNullList<Ing
 	constructor(registryName: String, vararg mIngredients: Array<out ItemStack>) : this(registryName, NonNullList.from<Ingredient>(Ingredient.EMPTY, *(mIngredients.map { Ingredient.fromStacks(*it) }.toTypedArray())))
 	constructor(registryName: String, vararg mIngredients: Ingredient) : this(registryName, NonNullList.from<Ingredient>(Ingredient.EMPTY, *mIngredients))
 
-	override fun canFit(p0: Int, p1: Int): Boolean {
-		TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-	}
-	override fun getRegistryType(): Class<IRecipe> {
-		TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-	}
+	override fun canFit(p0: Int, p1: Int): Boolean = true
+	override fun getRegistryType(): Class<IRecipe>? = null
 	override fun getRegistryName(): ResourceLocation? = mRegistryName
-	override fun getCraftingResult(p0: InventoryCrafting): ItemStack {
-		TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-	}
+	override fun getCraftingResult(p0: InventoryCrafting): ItemStack = ItemStack.EMPTY
 	override fun setRegistryName(p0: ResourceLocation?): IRecipe {
 		mRegistryName = p0
 		return this
 	}
-	override fun matches(p0: InventoryCrafting, p1: World): Boolean {
-		TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-	}
+	override fun matches(p0: InventoryCrafting, p1: World): Boolean = true
 
 	override fun getRecipeOutput(): ItemStack = ItemStack.EMPTY // null
 	override fun getIngredients(): NonNullList<Ingredient> = mIngredients

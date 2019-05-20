@@ -10,6 +10,7 @@ import net.minecraft.world.World
 
 class EntityRainbowPig(worldIn: World) : EntityPig(worldIn) {
 	override fun createChild(ageable: EntityAgeable): EntityRainbowPig = EntityRainbowPig(world)
+	override fun getLootTable(): ResourceLocation = ResourceLocation(DAMTest.MODID, "entity/rainbow_pig")
 }
 
 class RenderRainbowPig(renderManager: RenderManager) : RenderPig(renderManager) {

@@ -24,12 +24,18 @@ item.damtest.rainbow_helmet.name=Rainbow Helmet
 item.damtest.rainbow_chestplate.name=Rainbow Chestplate
 item.damtest.rainbow_leggings.name=Rainbow Leggings
 item.damtest.rainbow_boots.name=Rainbow Boots
+item.damtest.white_rod.name=White Rod
+item.damtest.white_rod_sword.name=White Rod Sword
 
 tile.damtest.fabricator.name=Matter Fabricator
 tile.damtest.extractor.name=Matter Extractor
 tile.damtest.matter_block.name=Block of Matter
 tile.damtest.rainbow_block.name=Block of Rainbow
 tile.damtest.rainbow_ore.name=Rainbow Ore
+tile.damtest.rainbow_grass.name=Rainbow Grass
+tile.damtest.rainbow_dirt.name=Rainbow Dirt
+tile.damtest.rainbow_stone.name=Rainbow Stone
+tile.damtest.rainbow_cobblestone.name=Rainbow Cobblestone
 
 itemGroup.damtest=DimitrodAM Test
 
