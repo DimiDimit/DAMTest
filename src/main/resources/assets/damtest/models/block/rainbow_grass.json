@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_top",
+  "textures": {
+    "side": "damtest:blocks/rainbow_grass_side",
+    "top": "damtest:blocks/rainbow_grass_top"
+  }
+}

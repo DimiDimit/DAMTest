@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "snowy=false": [
+      { "model": "damtest:rainbow_grass" }
+    ],
+    "snowy=true":  { "model": "damtest:rainbow_grass_snowed" }
+  }
+}

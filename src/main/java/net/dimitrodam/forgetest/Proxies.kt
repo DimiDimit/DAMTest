@@ -2,6 +2,7 @@
 
 package net.dimitrodam.forgetest
 
+import net.dimitrodam.forgetest.biome.BiomeRainbowForest
 import net.dimitrodam.forgetest.block.*
 import net.dimitrodam.forgetest.container.ContainerExtractor
 import net.dimitrodam.forgetest.container.ContainerFabricator
@@ -17,11 +18,15 @@ import net.minecraft.entity.player.EntityPlayer
 import net.minecraft.inventory.EntityEquipmentSlot
 import net.minecraft.item.Item
 import net.minecraft.item.ItemBlock
+import net.minecraft.item.ItemStack
 import net.minecraft.item.crafting.IRecipe
 import net.minecraft.util.ResourceLocation
 import net.minecraft.util.math.BlockPos
 import net.minecraft.world.World
+import net.minecraft.world.biome.Biome
+import net.minecraft.world.storage.loot.LootTableList
 import net.minecraftforge.client.event.ModelRegistryEvent
+import net.minecraftforge.common.BiomeManager
 import net.minecraftforge.event.RegistryEvent
 import net.minecraftforge.fml.client.registry.RenderingRegistry
 import net.minecraftforge.fml.common.Mod
@@ -39,7 +44,8 @@ import net.minecraftforge.oredict.OreDictionary
 @Mod.EventBusSubscriber
 abstract class Proxy {
 	open fun preInit(event: FMLPreInitializationEvent) {
-		GameRegistry.registerWorldGenerator(DTWorldGen(), 3)
+		GameRegistry.registerWorldGenerator(DTWorldGen, 3)
+		LootTableList.register(ResourceLocation(DAMTest.MODID, "entity/rainbow_pig"))
 	}
 	open fun init(event: FMLInitializationEvent) {
 		NetworkRegistry.INSTANCE.registerGuiHandler(DAMTest.instance, GuiProxy)
@@ -47,10 +53,14 @@ abstract class Proxy {
 		OreDictionary.registerOre("ingotRainbow", DTItems.rainbowIngot)
 		OreDictionary.registerOre("nuggetRainbow", DTItems.rainbowNugget)
 		OreDictionary.registerOre("blockRainbow", DTBlocks.rainbowBlock)
+		GameRegistry.addSmelting(DTBlocks.rainbowOre, ItemStack(DTItems.rainbowIngot), 20.0F)
+		GameRegistry.addSmelting(DTBlocks.rainbowCobblestone, ItemStack(DTBlocks.rainbowStone), 0.0F)
 	}
 	open fun postInit(event: FMLPostInitializationEvent) {}
 
 	companion object {
+		lateinit var rainbowForest: BiomeRainbowForest
+
 		@JvmStatic
 		@SubscribeEvent
 		fun registerBlocks(event: RegistryEvent.Register<Block>) {
@@ -59,7 +69,11 @@ abstract class Proxy {
 					BlockExtractor(),
 					BlockMatter(),
 					BlockRainbowOre(),
-					BlockRainbow()
+					BlockRainbow(),
+					BlockRainbowGrass(),
+					BlockRainbowDirt(),
+					BlockRainbowStone(),
+					BlockRainbowCobblestone()
 			)
 			GameRegistry.registerTileEntity(TileFabricator::class.java, ResourceLocation(DAMTest.MODID, "fabricator"))
 			GameRegistry.registerTileEntity(TileExtractor::class.java, ResourceLocation(DAMTest.MODID, "extractor"))
@@ -83,12 +97,18 @@ abstract class Proxy {
 					ItemRainbowArmor("rainbow_chestplate", 0, EntityEquipmentSlot.CHEST),
 					ItemRainbowArmor("rainbow_leggings", 1, EntityEquipmentSlot.LEGS),
 					ItemRainbowArmor("rainbow_boots", 0, EntityEquipmentSlot.FEET),
+					ItemWhiteRod(),
+					ItemWhiteRodSword(),
 
 					ItemBlock(DTBlocks.fabricator).setRegistryName(DTBlocks.fabricator.registryName),
 					ItemBlock(DTBlocks.extractor).setRegistryName(DTBlocks.extractor.registryName),
 					ItemBlock(DTBlocks.matterBlock).setRegistryName(DTBlocks.matterBlock.registryName),
 					ItemBlock(DTBlocks.rainbowOre).setRegistryName(DTBlocks.rainbowOre.registryName),
-					ItemBlock(DTBlocks.rainbowBlock).setRegistryName(DTBlocks.rainbowBlock.registryName)
+					ItemBlock(DTBlocks.rainbowBlock).setRegistryName(DTBlocks.rainbowBlock.registryName),
+					ItemBlock(DTBlocks.rainbowGrass).setRegistryName(DTBlocks.rainbowGrass.registryName),
+					ItemBlock(DTBlocks.rainbowDirt).setRegistryName(DTBlocks.rainbowDirt.registryName),
+					ItemBlock(DTBlocks.rainbowStone).setRegistryName(DTBlocks.rainbowStone.registryName),
+					ItemBlock(DTBlocks.rainbowCobblestone).setRegistryName(DTBlocks.rainbowCobblestone.registryName)
 			)
 		}
 		@JvmStatic
@@ -98,6 +118,15 @@ abstract class Proxy {
 					ItemPack.CombinationRecipe(),
 					ItemPack.TargetRecipe()
 			)
+		}
+		@JvmStatic
+		@SubscribeEvent
+		fun registerBiomes(event: RegistryEvent.Register<Biome>) {
+			rainbowForest = BiomeRainbowForest()
+			event.registry.registerAll(
+					rainbowForest.setRegistryName(ResourceLocation(DAMTest.MODID, "rainbow_forest"))
+			)
+			BiomeManager.addBiome(BiomeManager.BiomeType.WARM, BiomeManager.BiomeEntry(rainbowForest, 5))
 		}
 	}
 }
@@ -114,10 +143,12 @@ class ClientProxy : Proxy() {
 	}
 
 	override fun preInit(event: FMLPreInitializationEvent) {
+		super.preInit(event)
 		RenderingRegistry.registerEntityRenderingHandler(EntityRainbowPig::class.java) { renderManager -> RenderRainbowPig(renderManager) }
 	}
 
 	override fun init(event: FMLInitializationEvent) {
+		super.init(event)
 		EntityRegistry.registerModEntity(ResourceLocation(DAMTest.MODID, "rainbow_pig"), EntityRainbowPig::class.java, "rainbow_pig", 0, DAMTest.MODID, 64, 5, true, 0xC20000, 0xF80000)
 	}
 }

@@ -36,6 +36,18 @@ object DTBlocks {
 	@JvmStatic
 	@GameRegistry.ObjectHolder("${DAMTest.MODID}:rainbow_block")
 	lateinit var rainbowBlock: BlockRainbow
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:rainbow_grass")
+	lateinit var rainbowGrass: BlockRainbowGrass
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:rainbow_dirt")
+	lateinit var rainbowDirt: BlockRainbowDirt
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:rainbow_stone")
+	lateinit var rainbowStone: BlockRainbowStone
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:rainbow_cobblestone")
+	lateinit var rainbowCobblestone: BlockRainbowCobblestone
 
 	@JvmStatic
 	@SideOnly(Side.CLIENT)
@@ -45,7 +57,11 @@ object DTBlocks {
 				extractor,
 				matterBlock,
 				rainbowOre,
-				rainbowBlock
+				rainbowBlock,
+				rainbowGrass,
+				rainbowDirt,
+				rainbowStone,
+				rainbowCobblestone
 		)) {
 			ModelLoader.setCustomModelResourceLocation(
 					getItemFromBlock(b),
@@ -101,6 +117,12 @@ object DTItems {
 	@JvmStatic
 	@GameRegistry.ObjectHolder("${DAMTest.MODID}:rainbow_boots")
 	lateinit var rainbowBoots: ItemRainbowArmor
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:white_rod")
+	lateinit var whiteRod: ItemWhiteRod
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:white_rod_sword")
+	lateinit var whiteRodSword: ItemWhiteRodSword
 
 	@JvmStatic
 	@SideOnly(Side.CLIENT)
@@ -119,7 +141,9 @@ object DTItems {
 				rainbowHelmet,
 				rainbowChestplate,
 				rainbowLeggings,
-				rainbowBoots
+				rainbowBoots,
+				whiteRod,
+				whiteRodSword
 		)) {
 			ModelLoader.setCustomModelResourceLocation(
 					i, 0, ModelResourceLocation(i.registryName!!, "inventory")
@@ -131,7 +155,7 @@ object DTItems {
 	}
 }
 
-class DTWorldGen : IWorldGenerator {
+object DTWorldGen : IWorldGenerator {
 	override fun generate(random: Random, chunkX: Int, chunkZ: Int, world: World, chunkGenerator: IChunkGenerator, chunkProvider: IChunkProvider) {
 		when(world.provider.dimension) {
 			0 -> { // Overworld
