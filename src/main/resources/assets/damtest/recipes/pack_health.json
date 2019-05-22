@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GGG",
+    "GIG",
+    "GGG"  ],
+  "key": {
+    "G": [
+      {
+        "type": "forge:ore_dict",
+        "ore": "ingotGold"
+      }
+    ],
+    "I": [
+      {
+        "item": "minecraft:speckled_melon",
+        "data": 0
+      }
+    ]
+  },
+  "result": {
+    "item": "damtest:pack",
+    "data": 0,
+    "nbt": {
+      "actions": "health",
+      "target": "self"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GGG",
+    "GIG",
+    "GGG"  ],
+  "key": {
+    "G": [
+      {
+        "type": "forge:ore_dict",
+        "ore": "ingotGold"
+      }
+    ],
+    "I": [
+      {
+        "type": "forge:ore_dict",
+        "ore": "dyeYellow"
+      }
+    ]
+  },
+  "result": {
+    "item": "damtest:pack",
+    "data": 0,
+    "nbt": {
+      "actions": "day",
+      "target": "self"
+    }
+  }
+}

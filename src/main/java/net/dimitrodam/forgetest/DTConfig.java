@@ -25,7 +25,7 @@ public class DTConfig {
         public String[] rbOredict = new String[]{"coal=1", "charcoal=1"};
         @Config.RequiresMcRestart
         @Config.LangKey(PREFIX + "matter_config.ndiggb_oredict")
-        public String[] ndiggbOredict = new String[]{"redstone=2", "lapis=2", "iron=3", "gold=5", "diamond=15", "emerald=20"};
+        public String[] ndiggbOredict = new String[]{"redstone=2", "lapis=2", "iron=3", "gold=5", "diamond=15", "emerald=20", "rainbow=576"};
     }
 
     @Mod.EventBusSubscriber(modid = DAMTest.MODID)

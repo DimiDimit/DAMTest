@@ -1,7 +1,9 @@
 {
-  "parent": "block/cube_top",
+  "parent": "block/cube_bottom_top",
   "textures": {
+    "particle": "damtest:blocks/rainbow_dirt",
     "side": "damtest:blocks/rainbow_grass_side",
-    "top": "damtest:blocks/rainbow_grass_top"
+    "top": "damtest:blocks/rainbow_grass_top",
+    "bottom": "damtest:blocks/rainbow_dirt"
   }
 }

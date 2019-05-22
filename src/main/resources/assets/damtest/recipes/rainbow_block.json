@@ -7,8 +7,8 @@
   "key": {
     "I": [
       {
-        "item": "damtest:rainbow_ingot",
-        "data": 0
+        "type": "forge:ore_dict",
+        "ore": "ingotRainbow"
       }
     ]
   },

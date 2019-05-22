@@ -48,6 +48,9 @@ object DTBlocks {
 	@JvmStatic
 	@GameRegistry.ObjectHolder("${DAMTest.MODID}:rainbow_cobblestone")
 	lateinit var rainbowCobblestone: BlockRainbowCobblestone
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:white_rod_block")
+	lateinit var whiteRodBlock: BlockWhiteRod
 
 	@JvmStatic
 	@SideOnly(Side.CLIENT)
@@ -61,7 +64,8 @@ object DTBlocks {
 				rainbowGrass,
 				rainbowDirt,
 				rainbowStone,
-				rainbowCobblestone
+				rainbowCobblestone,
+				whiteRodBlock
 		)) {
 			ModelLoader.setCustomModelResourceLocation(
 					getItemFromBlock(b),
@@ -121,8 +125,35 @@ object DTItems {
 	@GameRegistry.ObjectHolder("${DAMTest.MODID}:white_rod")
 	lateinit var whiteRod: ItemWhiteRod
 	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:white_rod_dust")
+	lateinit var whiteRodDust: ItemWhiteRodDust
+	@JvmStatic
 	@GameRegistry.ObjectHolder("${DAMTest.MODID}:white_rod_sword")
 	lateinit var whiteRodSword: ItemWhiteRodSword
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:white_rod_pickaxe")
+	lateinit var whiteRodPickaxe: ItemWhiteRodPickaxe
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:white_rod_axe")
+	lateinit var whiteRodAxe: ItemWhiteRodAxe
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:white_rod_shovel")
+	lateinit var whiteRodShovel: ItemWhiteRodShovel
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:white_rod_hoe")
+	lateinit var whiteRodHoe: ItemWhiteRodHoe
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:white_rod_helmet")
+	lateinit var whiteRodHelmet: ItemWhiteRodArmor
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:white_rod_chestplate")
+	lateinit var whiteRodChestplate: ItemWhiteRodArmor
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:white_rod_leggings")
+	lateinit var whiteRodLeggings: ItemWhiteRodArmor
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:white_rod_boots")
+	lateinit var whiteRodBoots: ItemWhiteRodArmor
 
 	@JvmStatic
 	@SideOnly(Side.CLIENT)
@@ -143,7 +174,16 @@ object DTItems {
 				rainbowLeggings,
 				rainbowBoots,
 				whiteRod,
-				whiteRodSword
+				whiteRodDust,
+				whiteRodSword,
+				whiteRodPickaxe,
+				whiteRodAxe,
+				whiteRodShovel,
+				whiteRodHoe,
+				whiteRodHelmet,
+				whiteRodChestplate,
+				whiteRodLeggings,
+				whiteRodBoots
 		)) {
 			ModelLoader.setCustomModelResourceLocation(
 					i, 0, ModelResourceLocation(i.registryName!!, "inventory")

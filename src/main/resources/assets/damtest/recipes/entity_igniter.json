@@ -6,9 +6,9 @@
       "data": 0
     },
     {
-      "item": "minecraft:gold_ingot",
-      "data": 0
-    }
+        "type": "forge:ore_dict",
+        "ore": "ingotGold"
+      }
   ],
   "result": {
     "item": "damtest:entity_igniter",

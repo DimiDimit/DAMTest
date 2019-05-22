@@ -27,7 +27,7 @@ import org.apache.logging.log4j.Logger
 object DAMTest {
 	const val MODID = "damtest"
 	const val NAME = "DimitrodAM Test"
-	const val VERSION = "1.12.2-1.0.2.0"
+	const val VERSION = "1.12.2-1.0.3.0"
 	const val ACCEPTED_MINECRAFT_VERSIONS = "[1.12.2]"
 
 	@JvmStatic
@@ -46,8 +46,9 @@ object DAMTest {
 
 	val MATERIAL_ROCK_HAND = Material(MapColor.STONE)
 	val TOOL_MATERIAL_RAINBOW = EnumHelper.addToolMaterial("rainbow", 4, 6000, 14.0F, 6.0F, 30)!!
-	val ARMOR_MATERIAL_RAINBOW = EnumHelper.addArmorMaterial("rainbow", ResourceLocation(MODID, "rainbow").toString(), 6000, intArrayOf(10, 10, 10, 10), 30, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 5.0F)!!
+	val ARMOR_MATERIAL_RAINBOW = EnumHelper.addArmorMaterial("rainbow", ResourceLocation(MODID, "rainbow").toString(), 6000, intArrayOf(10, 11, 12, 10), 30, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 5.0F)!!
 	val TOOL_MATERIAL_WHITE_ROD = EnumHelper.addToolMaterial("white_rod", 5, 8000, 30.0F, 3.0F, 4)!!
+	val ARMOR_MATERIAL_WHITE_ROD = EnumHelper.addArmorMaterial("white_rod", ResourceLocation(MODID, "white_rod").toString(), 8000, intArrayOf(14, 15, 16, 14), 4, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 4.0F)!!
 	//endregion
 
 	//region Initialization Events

@@ -25,7 +25,16 @@ item.damtest.rainbow_chestplate.name=Rainbow Chestplate
 item.damtest.rainbow_leggings.name=Rainbow Leggings
 item.damtest.rainbow_boots.name=Rainbow Boots
 item.damtest.white_rod.name=White Rod
+item.damtest.white_rod_dust.name=White Rod Dust
 item.damtest.white_rod_sword.name=White Rod Sword
+item.damtest.white_rod_pickaxe.name=White Rod Pickaxe
+item.damtest.white_rod_axe.name=White Rod Axe
+item.damtest.white_rod_shovel.name=White Rod Shovel
+item.damtest.white_rod_hoe.name=White Rod Hoe
+item.damtest.white_rod_helmet.name=White Rod Helmet
+item.damtest.white_rod_chestplate.name=White Rod Chestplate
+item.damtest.white_rod_leggings.name=White Rod Leggings
+item.damtest.white_rod_boots.name=White Rod Boots
 
 tile.damtest.fabricator.name=Matter Fabricator
 tile.damtest.extractor.name=Matter Extractor
@@ -36,6 +45,7 @@ tile.damtest.rainbow_grass.name=Rainbow Grass
 tile.damtest.rainbow_dirt.name=Rainbow Dirt
 tile.damtest.rainbow_stone.name=Rainbow Stone
 tile.damtest.rainbow_cobblestone.name=Rainbow Cobblestone
+tile.damtest.white_rod_block.name=Block of White Rod
 
 itemGroup.damtest=DimitrodAM Test
 

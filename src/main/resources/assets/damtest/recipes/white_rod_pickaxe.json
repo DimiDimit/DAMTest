@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "RRR",
+    " S ",
+    " S "  ],
+  "key": {
+    "R": [
+      {
+        "item": "damtest:white_rod",
+        "data": 0
+      }
+    ],
+    "S": [
+      {
+        "item": "minecraft:stick",
+        "data": 0
+      }
+    ]
+  },
+  "result": {
+    "item": "damtest:white_rod_pickaxe",
+    "data": 0
+  }
+}

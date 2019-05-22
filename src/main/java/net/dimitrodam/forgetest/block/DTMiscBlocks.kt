@@ -114,3 +114,5 @@ class BlockRainbowCobblestone : DTBlock(Material.ROCK, "rainbow_cobblestone", 2.
 		setCreativeTab(CreativeTabs.BUILDING_BLOCKS)
 	}
 }
+
+class BlockWhiteRod : DTBlock(Material.ROCK, "white_rod_block") { init { setHarvestLevel("pickaxe", 2) } }

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "III",
+    "III"  ],
+  "key": {
+    "I": [
+      {
+        "item": "damtest:white_rod",
+        "data": 0
+      }
+    ]
+  },
+  "result": {
+    "item": "damtest:white_rod_block",
+    "data": 0
+  }
+}

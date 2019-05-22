@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "R R",
+    "RRR",
+    "RRR"  ],
+  "key": {
+    "R": [
+      {
+        "item": "damtest:white_rod",
+        "data": 0
+      }
+    ]
+  },
+  "result": {
+    "item": "damtest:white_rod_chestplate",
+    "data": 0
+  }
+}

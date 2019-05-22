@@ -73,7 +73,8 @@ abstract class Proxy {
 					BlockRainbowGrass(),
 					BlockRainbowDirt(),
 					BlockRainbowStone(),
-					BlockRainbowCobblestone()
+					BlockRainbowCobblestone(),
+					BlockWhiteRod()
 			)
 			GameRegistry.registerTileEntity(TileFabricator::class.java, ResourceLocation(DAMTest.MODID, "fabricator"))
 			GameRegistry.registerTileEntity(TileExtractor::class.java, ResourceLocation(DAMTest.MODID, "extractor"))
@@ -98,7 +99,16 @@ abstract class Proxy {
 					ItemRainbowArmor("rainbow_leggings", 1, EntityEquipmentSlot.LEGS),
 					ItemRainbowArmor("rainbow_boots", 0, EntityEquipmentSlot.FEET),
 					ItemWhiteRod(),
+					ItemWhiteRodDust(),
 					ItemWhiteRodSword(),
+					ItemWhiteRodPickaxe(),
+					ItemWhiteRodAxe(),
+					ItemWhiteRodShovel(),
+					ItemWhiteRodHoe(),
+					ItemWhiteRodArmor("white_rod_helmet", 0, EntityEquipmentSlot.HEAD),
+					ItemWhiteRodArmor("white_rod_chestplate", 0, EntityEquipmentSlot.CHEST),
+					ItemWhiteRodArmor("white_rod_leggings", 1, EntityEquipmentSlot.LEGS),
+					ItemWhiteRodArmor("white_rod_boots", 0, EntityEquipmentSlot.FEET),
 
 					ItemBlock(DTBlocks.fabricator).setRegistryName(DTBlocks.fabricator.registryName),
 					ItemBlock(DTBlocks.extractor).setRegistryName(DTBlocks.extractor.registryName),
@@ -108,7 +118,8 @@ abstract class Proxy {
 					ItemBlock(DTBlocks.rainbowGrass).setRegistryName(DTBlocks.rainbowGrass.registryName),
 					ItemBlock(DTBlocks.rainbowDirt).setRegistryName(DTBlocks.rainbowDirt.registryName),
 					ItemBlock(DTBlocks.rainbowStone).setRegistryName(DTBlocks.rainbowStone.registryName),
-					ItemBlock(DTBlocks.rainbowCobblestone).setRegistryName(DTBlocks.rainbowCobblestone.registryName)
+					ItemBlock(DTBlocks.rainbowCobblestone).setRegistryName(DTBlocks.rainbowCobblestone.registryName),
+					ItemBlock(DTBlocks.whiteRodBlock).setRegistryName(DTBlocks.whiteRodBlock.registryName)
 			)
 		}
 		@JvmStatic

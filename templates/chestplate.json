@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "R R",
+    "RRR",
+    "RRR"  ],
+  "key": {
+    "R": [
+      {
+        "item": "damtest:@@item@@",
+        "data": 0
+      }
+    ]
+  },
+  "result": {
+    "item": "damtest:@@result@@",
+    "data": 0
+  }
+}
