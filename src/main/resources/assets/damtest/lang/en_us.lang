@@ -35,6 +35,17 @@ item.damtest.white_rod_helmet.name=White Rod Helmet
 item.damtest.white_rod_chestplate.name=White Rod Chestplate
 item.damtest.white_rod_leggings.name=White Rod Leggings
 item.damtest.white_rod_boots.name=White Rod Boots
+item.damtest.blaze_sword.name=Blaze Sword
+item.damtest.blaze_pickaxe.name=Blaze Pickaxe
+item.damtest.blaze_axe.name=Blaze Axe
+item.damtest.blaze_shovel.name=Blaze Shovel
+item.damtest.blaze_hoe.name=Blaze Hoe
+item.damtest.blaze_helmet.name=Blaze Helmet
+item.damtest.blaze_chestplate.name=Blaze Chestplate
+item.damtest.blaze_leggings.name=Blaze Leggings
+item.damtest.blaze_boots.name=Blaze Boots
+item.damtest.ice_shard.name=Ice Shard
+item.damtest.ice_breaker.name=Ice Breaker
 
 tile.damtest.fabricator.name=Matter Fabricator
 tile.damtest.extractor.name=Matter Extractor

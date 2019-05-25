@@ -1,14 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "RRR",
-    " S ",
-    " S "  ],
+    "  I",
+    " II",
+    "S  "  ],
   "key": {
-    "R": [
+    "I": [
       {
-        "item": "@@material@@",
-        "data": 0
+        "type": "forge:ore_dict",
+        "ore": "ingotIron"
       }
     ],
     "S": [
@@ -19,7 +19,7 @@
     ]
   },
   "result": {
-    "item": "@@result@@",
+    "item": "damtest:ice_breaker",
     "data": 0
   }
 }

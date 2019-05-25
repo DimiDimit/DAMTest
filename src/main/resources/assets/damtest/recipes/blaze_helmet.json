@@ -1,18 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "R R",
+    "RRR",
     "R R"  ],
   "key": {
     "R": [
       {
-        "item": "@@material@@",
+        "item": "minecraft:blaze_powder",
         "data": 0
       }
     ]
   },
   "result": {
-    "item": "@@result@@",
+    "item": "damtest:blaze_helmet",
     "data": 0
   }
 }

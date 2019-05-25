@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:ice",
+      "data": 0
+    }
+  ],
+  "result": {
+    "item": "damtest:ice_shard",
+    "data": 0,
+    "count": 9
+  }
+}

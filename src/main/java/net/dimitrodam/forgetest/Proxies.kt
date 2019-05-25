@@ -11,6 +11,7 @@ import net.dimitrodam.forgetest.entity.RenderRainbowPig
 import net.dimitrodam.forgetest.guicontainer.GuiContainerExtractor
 import net.dimitrodam.forgetest.guicontainer.GuiContainerFabricator
 import net.dimitrodam.forgetest.item.*
+import net.dimitrodam.forgetest.item.tool.*
 import net.dimitrodam.forgetest.tile.TileExtractor
 import net.dimitrodam.forgetest.tile.TileFabricator
 import net.minecraft.block.Block
@@ -109,6 +110,17 @@ abstract class Proxy {
 					ItemWhiteRodArmor("white_rod_chestplate", 0, EntityEquipmentSlot.CHEST),
 					ItemWhiteRodArmor("white_rod_leggings", 1, EntityEquipmentSlot.LEGS),
 					ItemWhiteRodArmor("white_rod_boots", 0, EntityEquipmentSlot.FEET),
+					ItemBlazeSword(),
+					ItemBlazePickaxe(),
+					ItemBlazeAxe(),
+					ItemBlazeShovel(),
+					ItemBlazeHoe(),
+					ItemBlazeArmor("blaze_helmet", 0, EntityEquipmentSlot.HEAD),
+					ItemBlazeArmor("blaze_chestplate", 0, EntityEquipmentSlot.CHEST),
+					ItemBlazeArmor("blaze_leggings", 1, EntityEquipmentSlot.LEGS),
+					ItemBlazeArmor("blaze_boots", 0, EntityEquipmentSlot.FEET),
+					ItemIceShard(),
+					ItemIceBreaker(),
 
 					ItemBlock(DTBlocks.fabricator).setRegistryName(DTBlocks.fabricator.registryName),
 					ItemBlock(DTBlocks.extractor).setRegistryName(DTBlocks.extractor.registryName),

@@ -1,0 +1,14 @@
+[
+  {
+    "pattern": "blockstate.json",
+    "destination": "../src/main/resources/assets/damtest/blockstates/@@block@@.json"
+  },
+  {
+    "pattern": "block.json",
+    "destination": "../src/main/resources/assets/damtest/models/block/@@block@@.json"
+  },
+  {
+    "pattern": "item_block.json",
+    "destination": "../src/main/resources/assets/damtest/models/item/@@block@@.json"
+  }
+]

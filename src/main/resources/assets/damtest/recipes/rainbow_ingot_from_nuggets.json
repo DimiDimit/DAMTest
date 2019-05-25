@@ -13,7 +13,7 @@
     ]
   },
   "result": {
-        "type": "forge:ore_dict",
-        "ore": "ingotRainbow"
-      }
+    "item": "damtest:rainbow_ingot",
+    "data": 0
+  }
 }

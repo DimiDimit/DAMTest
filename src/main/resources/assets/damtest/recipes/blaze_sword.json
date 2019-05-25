@@ -1,13 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "RRR",
-    " S ",
-    " S "  ],
+    "R",
+    "R",
+    "S"  ],
   "key": {
     "R": [
       {
-        "item": "@@material@@",
+        "item": "minecraft:blaze_powder",
         "data": 0
       }
     ],
@@ -19,7 +19,7 @@
     ]
   },
   "result": {
-    "item": "@@result@@",
+    "item": "damtest:blaze_sword",
     "data": 0
   }
 }

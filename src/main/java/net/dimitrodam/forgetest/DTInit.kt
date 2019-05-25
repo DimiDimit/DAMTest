@@ -2,6 +2,7 @@ package net.dimitrodam.forgetest
 
 import net.dimitrodam.forgetest.block.*
 import net.dimitrodam.forgetest.item.*
+import net.dimitrodam.forgetest.item.tool.*
 import net.minecraft.block.state.IBlockState
 import net.minecraft.client.renderer.block.model.ModelBakery
 import net.minecraft.client.renderer.block.model.ModelResourceLocation
@@ -154,6 +155,39 @@ object DTItems {
 	@JvmStatic
 	@GameRegistry.ObjectHolder("${DAMTest.MODID}:white_rod_boots")
 	lateinit var whiteRodBoots: ItemWhiteRodArmor
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:blaze_sword")
+	lateinit var blazeSword: ItemSword
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:blaze_pickaxe")
+	lateinit var blazePickaxe: ItemBlazePickaxe
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:blaze_axe")
+	lateinit var blazeAxe: ItemBlazeAxe
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:blaze_shovel")
+	lateinit var blazeShovel: ItemBlazeShovel
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:blaze_hoe")
+	lateinit var blazeHoe: ItemBlazeHoe
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:blaze_helmet")
+	lateinit var blazeHelmet: ItemBlazeArmor
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:blaze_chestplate")
+	lateinit var blazeChestplate: ItemBlazeArmor
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:blaze_leggings")
+	lateinit var blazeLeggings: ItemBlazeArmor
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:blaze_boots")
+	lateinit var blazeBoots: ItemBlazeArmor
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:ice_shard")
+	lateinit var iceShard: ItemIceShard
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:ice_breaker")
+	lateinit var iceBreaker: ItemIceBreaker
 
 	@JvmStatic
 	@SideOnly(Side.CLIENT)
@@ -183,7 +217,18 @@ object DTItems {
 				whiteRodHelmet,
 				whiteRodChestplate,
 				whiteRodLeggings,
-				whiteRodBoots
+				whiteRodBoots,
+				blazeSword,
+				blazePickaxe,
+				blazeAxe,
+				blazeShovel,
+				blazeHoe,
+				blazeHelmet,
+				blazeChestplate,
+				blazeLeggings,
+				blazeBoots,
+				iceShard,
+				iceBreaker
 		)) {
 			ModelLoader.setCustomModelResourceLocation(
 					i, 0, ModelResourceLocation(i.registryName!!, "inventory")

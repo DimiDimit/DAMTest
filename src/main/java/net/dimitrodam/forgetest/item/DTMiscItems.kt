@@ -9,3 +9,5 @@ class ItemRainbowNugget : DTItem("rainbow_nugget")
 
 class ItemWhiteRod : DTItem("white_rod")
 class ItemWhiteRodDust : DTItem("white_rod_dust")
+
+class ItemIceShard : DTItem("ice_shard")

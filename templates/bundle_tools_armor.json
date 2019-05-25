@@ -1,0 +1,128 @@
+[
+  {
+    "pattern": "sword.json",
+    "destination": "../src/main/resources/assets/damtest/recipes/@@item@@_sword.json",
+    "replacements": {
+      "result": "damtest:@@item@@_sword"
+    }
+  },
+  {
+    "pattern": "item.json",
+    "destination": "../src/main/resources/assets/damtest/models/item/@@item@@_sword.json",
+    "replacements": {
+      "item": "@@item@@_sword"
+    }
+  },
+  {
+    "pattern": "pickaxe.json",
+    "destination": "../src/main/resources/assets/damtest/recipes/@@item@@_pickaxe.json",
+    "replacements": {
+      "result": "damtest:@@item@@_pickaxe"
+    }
+  },
+  {
+    "pattern": "item.json",
+    "destination": "../src/main/resources/assets/damtest/models/item/@@item@@_pickaxe.json",
+    "replacements": {
+      "item": "@@item@@_pickaxe"
+    }
+  },
+  {
+    "pattern": "axe.json",
+    "destination": "../src/main/resources/assets/damtest/recipes/@@item@@_axe.json",
+    "replacements": {
+      "result": "damtest:@@item@@_axe"
+    }
+  },
+  {
+    "pattern": "item.json",
+    "destination": "../src/main/resources/assets/damtest/models/item/@@item@@_axe.json",
+    "replacements": {
+      "item": "@@item@@_axe"
+    }
+  },
+  {
+    "pattern": "shovel.json",
+    "destination": "../src/main/resources/assets/damtest/recipes/@@item@@_shovel.json",
+    "replacements": {
+      "result": "damtest:@@item@@_shovel"
+    }
+  },
+  {
+    "pattern": "item.json",
+    "destination": "../src/main/resources/assets/damtest/models/item/@@item@@_shovel.json",
+    "replacements": {
+      "item": "@@item@@_shovel"
+    }
+  },
+  {
+    "pattern": "hoe.json",
+    "destination": "../src/main/resources/assets/damtest/recipes/@@item@@_hoe.json",
+    "replacements": {
+      "result": "damtest:@@item@@_hoe"
+    }
+  },
+  {
+    "pattern": "item.json",
+    "destination": "../src/main/resources/assets/damtest/models/item/@@item@@_hoe.json",
+    "replacements": {
+      "item": "@@item@@_hoe"
+    }
+  },
+  {
+    "pattern": "helmet.json",
+    "destination": "../src/main/resources/assets/damtest/recipes/@@item@@_helmet.json",
+    "replacements": {
+      "result": "damtest:@@item@@_helmet"
+    }
+  },
+  {
+    "pattern": "item.json",
+    "destination": "../src/main/resources/assets/damtest/models/item/@@item@@_helmet.json",
+    "replacements": {
+      "item": "@@item@@_helmet"
+    }
+  },
+  {
+    "pattern": "chestplate.json",
+    "destination": "../src/main/resources/assets/damtest/recipes/@@item@@_chestplate.json",
+    "replacements": {
+      "result": "damtest:@@item@@_chestplate"
+    }
+  },
+  {
+    "pattern": "item.json",
+    "destination": "../src/main/resources/assets/damtest/models/item/@@item@@_chestplate.json",
+    "replacements": {
+      "item": "@@item@@_chestplate"
+    }
+  },
+  {
+    "pattern": "leggings.json",
+    "destination": "../src/main/resources/assets/damtest/recipes/@@item@@_leggings.json",
+    "replacements": {
+      "result": "damtest:@@item@@_leggings"
+    }
+  },
+  {
+    "pattern": "item.json",
+    "destination": "../src/main/resources/assets/damtest/models/item/@@item@@_leggings.json",
+    "replacements": {
+      "item": "@@item@@_leggings"
+    }
+  },
+  {
+    "pattern": "boots.json",
+    "destination": "../src/main/resources/assets/damtest/recipes/@@item@@_boots.json",
+    "replacements": {
+      "result": "damtest:@@item@@_boots"
+    }
+  },
+  {
+    "pattern": "item.json",
+    "destination": "../src/main/resources/assets/damtest/models/item/@@item@@_boots.json",
+    "replacements": {
+      "item": "@@item@@_boots"
+    }
+  }
+]

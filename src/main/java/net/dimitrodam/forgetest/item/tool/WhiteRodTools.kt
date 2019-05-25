@@ -1,4 +1,4 @@
-package net.dimitrodam.forgetest.item
+package net.dimitrodam.forgetest.item.tool
 
 import net.dimitrodam.forgetest.DAMTest
 import net.dimitrodam.forgetest.util.DTItem.Companion.initWoTab

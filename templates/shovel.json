@@ -7,7 +7,7 @@
   "key": {
     "R": [
       {
-        "item": "damtest:@@item@@",
+        "item": "@@material@@",
         "data": 0
       }
     ],
@@ -19,7 +19,7 @@
     ]
   },
   "result": {
-    "item": "damtest:@@result@@",
+    "item": "@@result@@",
     "data": 0
   }
 }
