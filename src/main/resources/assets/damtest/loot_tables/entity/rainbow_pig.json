@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "item",
-          "name": "minecraft:porkchop",
+          "name": "damtest:rainbow_porkchop",
           "weight": 1,
           "functions": [
             {

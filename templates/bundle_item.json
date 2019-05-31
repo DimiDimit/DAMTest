@@ -1,0 +1,6 @@
+[
+  {
+    "pattern": "item.json",
+    "destination": "../src/main/resources/assets/damtest/models/item/@@item@@.json"
+  }
+]

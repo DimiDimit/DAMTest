@@ -6,6 +6,7 @@ import net.dimitrodam.forgetest.util.DTItem
 import net.minecraft.client.renderer.ItemMeshDefinition
 import net.minecraft.client.renderer.block.model.ModelResourceLocation
 import net.minecraft.client.resources.I18n
+import net.minecraft.client.util.ITooltipFlag
 import net.minecraft.creativetab.CreativeTabs
 import net.minecraft.entity.Entity
 import net.minecraft.entity.EntityLivingBase
@@ -65,12 +66,13 @@ class ItemPack : DTItem(REGISTRY_NAME) {
 		override fun matches(inv: InventoryCrafting, worldIn: World?): Boolean {
 			var found = 0
 			for(i in 0 until inv.sizeInventory) {
-				if(inv.getStackInSlot(i).item == DTItems.pack)
+				val stack = inv.getStackInSlot(i)
+				if(stack.item == DTItems.pack)
 					found += 1
-				if(found >= 2)
-					return true
+				else if(!stack.isEmpty)
+					return false
 			}
-			return false
+			return found >= 2
 		}
 
 		override fun getIngredients(): NonNullList<Ingredient> = NonNullList.withSize(2, Ingredient.fromItem(DTItems.pack))
@@ -142,9 +144,17 @@ class ItemPack : DTItem(REGISTRY_NAME) {
 								{ worldIn: World, target: Entity, stack: ItemStack ->
 									if(target !is EntityPlayer) return@Pair
 									val food = target.foodStats
-									target.heal(target.maxHealth - target.health)
 									food.foodLevel = 20
 									food.setFoodSaturationLevel(20f)
+								})
+						),
+						Pair("starving", Pair(
+								{ worldIn: World, target: Entity, stack: ItemStack -> if(target !is EntityPlayer) return@Pair false; val food = target.foodStats; food.foodLevel != 0 && food.saturationLevel != 0f },
+								{ worldIn: World, target: Entity, stack: ItemStack ->
+									if(target !is EntityPlayer) return@Pair
+									val food = target.foodStats
+									food.foodLevel = 0
+									food.setFoodSaturationLevel(0f)
 								})
 						),
 						Pair("fire", Pair(
@@ -241,5 +251,9 @@ class ItemPack : DTItem(REGISTRY_NAME) {
 			return true
 		}
 		return super.itemInteractionForEntity(stack, playerIn, target, hand)
+	}
+
+	override fun addInformation(stack: ItemStack, worldIn: World?, tooltip: MutableList<String>, flagIn: ITooltipFlag) {
+		addInformationWithRegistryName(tooltip, "jeimi")
 	}
 }

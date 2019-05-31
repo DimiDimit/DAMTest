@@ -16,6 +16,7 @@ import net.dimitrodam.forgetest.tile.TileExtractor
 import net.dimitrodam.forgetest.tile.TileFabricator
 import net.minecraft.block.Block
 import net.minecraft.entity.player.EntityPlayer
+import net.minecraft.init.Items
 import net.minecraft.inventory.EntityEquipmentSlot
 import net.minecraft.item.Item
 import net.minecraft.item.ItemBlock
@@ -30,6 +31,7 @@ import net.minecraftforge.client.event.ModelRegistryEvent
 import net.minecraftforge.common.BiomeManager
 import net.minecraftforge.event.RegistryEvent
 import net.minecraftforge.fml.client.registry.RenderingRegistry
+import net.minecraftforge.fml.common.Loader
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.common.event.FMLInitializationEvent
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent
@@ -45,7 +47,6 @@ import net.minecraftforge.oredict.OreDictionary
 @Mod.EventBusSubscriber
 abstract class Proxy {
 	open fun preInit(event: FMLPreInitializationEvent) {
-		GameRegistry.registerWorldGenerator(DTWorldGen, 3)
 		LootTableList.register(ResourceLocation(DAMTest.MODID, "entity/rainbow_pig"))
 	}
 	open fun init(event: FMLInitializationEvent) {
@@ -56,6 +57,10 @@ abstract class Proxy {
 		OreDictionary.registerOre("blockRainbow", DTBlocks.rainbowBlock)
 		GameRegistry.addSmelting(DTBlocks.rainbowOre, ItemStack(DTItems.rainbowIngot), 20.0F)
 		GameRegistry.addSmelting(DTBlocks.rainbowCobblestone, ItemStack(DTBlocks.rainbowStone), 0.0F)
+		GameRegistry.addSmelting(DTItems.rawRainbowPorkchop, ItemStack(DTItems.cookedRainbowPorkchop), 0.0F)
+		GameRegistry.addSmelting(Items.COOKED_PORKCHOP, ItemStack(DTItems.bacon), 0.0F)
+		GameRegistry.addSmelting(DTItems.cookedRainbowPorkchop, ItemStack(DTItems.rainbowBacon), 0.0F)
+		GameRegistry.registerWorldGenerator(DTWorldGen, 0)
 	}
 	open fun postInit(event: FMLPostInitializationEvent) {}
 
@@ -121,6 +126,11 @@ abstract class Proxy {
 					ItemBlazeArmor("blaze_boots", 0, EntityEquipmentSlot.FEET),
 					ItemIceShard(),
 					ItemIceBreaker(),
+					ItemRainbowPorkchop(),
+					ItemCookedRainbowPorkchop(),
+					ItemBacon(),
+					ItemRainbowBacon(),
+					ItemLightningBolt(),
 
 					ItemBlock(DTBlocks.fabricator).setRegistryName(DTBlocks.fabricator.registryName),
 					ItemBlock(DTBlocks.extractor).setRegistryName(DTBlocks.extractor.registryName),
@@ -133,6 +143,14 @@ abstract class Proxy {
 					ItemBlock(DTBlocks.rainbowCobblestone).setRegistryName(DTBlocks.rainbowCobblestone.registryName),
 					ItemBlock(DTBlocks.whiteRodBlock).setRegistryName(DTBlocks.whiteRodBlock.registryName)
 			)
+			if(Loader.isModLoaded("baubles")) {
+				DTDependantItems.emptyPotionRing = ItemEmptyPotionRing()
+				DTDependantItems.potionRing = ItemPotionRing()
+				event.registry.registerAll(
+						DTDependantItems.emptyPotionRing,
+						DTDependantItems.potionRing
+				)
+			}
 		}
 		@JvmStatic
 		@SubscribeEvent
@@ -141,6 +159,11 @@ abstract class Proxy {
 					ItemPack.CombinationRecipe(),
 					ItemPack.TargetRecipe()
 			)
+			if(Loader.isModLoaded("baubles"))
+				event.registry.registerAll(
+						ItemPotionRing.PotionRingRecipe(),
+						ItemPotionRing.CombinationRecipe()
+				)
 		}
 		@JvmStatic
 		@SubscribeEvent

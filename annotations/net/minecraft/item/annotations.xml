@@ -1,8 +1,0 @@
-<root>
-    <item name='net.minecraft.item.Item java.lang.String getUnlocalizedName(net.minecraft.item.ItemStack)'>
-        <annotation name='org.jetbrains.annotations.NotNull'/>
-    </item>
-    <item name='net.minecraft.item.Item unlocalizedName'>
-        <annotation name='org.jetbrains.annotations.NotNull'/>
-    </item>
-</root>

@@ -2,6 +2,7 @@ package net.dimitrodam.forgetest.item
 
 import net.dimitrodam.forgetest.util.DTItem
 import net.minecraft.advancements.CriteriaTriggers
+import net.minecraft.client.util.ITooltipFlag
 import net.minecraft.entity.EntityLivingBase
 import net.minecraft.entity.player.EntityPlayer
 import net.minecraft.entity.player.EntityPlayerMP
@@ -72,4 +73,8 @@ class ItemEntityIgniter : DTItem("entity_igniter") {
 
 	override fun isEnchantable(stack: ItemStack): Boolean = true
 	override fun getItemEnchantability(): Int = Item.ToolMaterial.IRON.enchantability
+
+	override fun addInformation(stack: ItemStack, worldIn: World?, tooltip: MutableList<String>, flagIn: ITooltipFlag) {
+		addInformation(stack, tooltip)
+	}
 }

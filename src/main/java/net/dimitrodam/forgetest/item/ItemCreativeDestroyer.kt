@@ -1,6 +1,8 @@
 package net.dimitrodam.forgetest.item
 
 import net.dimitrodam.forgetest.util.DTItem
+import net.minecraft.client.util.ITooltipFlag
+import net.minecraft.creativetab.CreativeTabs
 import net.minecraft.enchantment.Enchantment
 import net.minecraft.enchantment.EnchantmentHelper
 import net.minecraft.entity.EntityList
@@ -11,10 +13,7 @@ import net.minecraft.init.Enchantments
 import net.minecraft.init.Items
 import net.minecraft.item.ItemMonsterPlacer
 import net.minecraft.item.ItemStack
-import net.minecraft.util.ActionResult
-import net.minecraft.util.EnumActionResult
-import net.minecraft.util.EnumFacing
-import net.minecraft.util.EnumHand
+import net.minecraft.util.*
 import net.minecraft.util.math.BlockPos
 import net.minecraft.world.World
 
@@ -71,5 +70,18 @@ class ItemCreativeDestroyer : DTItem("creative_destroyer") {
 		if(enchantment == Enchantments.SILK_TOUCH)
 			return true
 		return super.canApplyAtEnchantingTable(stack, enchantment)
+	}
+
+	override fun addInformation(stack: ItemStack, worldIn: World?, tooltip: MutableList<String>, flagIn: ITooltipFlag) {
+		addInformation(stack, tooltip)
+	}
+
+	override fun getSubItems(tab: CreativeTabs, items: NonNullList<ItemStack>) {
+		if(isInCreativeTab(tab)) {
+			items.add(ItemStack(this))
+			val cis = ItemStack(this)
+			EnchantmentHelper.setEnchantments(mutableMapOf(Pair(Enchantments.SILK_TOUCH, 1)), cis)
+			items.add(cis)
+		}
 	}
 }

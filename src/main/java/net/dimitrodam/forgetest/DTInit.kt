@@ -15,6 +15,7 @@ import net.minecraft.world.gen.IChunkGenerator
 import net.minecraft.world.gen.feature.WorldGenMinable
 import net.minecraftforge.client.model.ModelLoader
 import net.minecraftforge.fml.common.IWorldGenerator
+import net.minecraftforge.fml.common.Loader
 import net.minecraftforge.fml.common.registry.GameRegistry
 import net.minecraftforge.fml.relauncher.Side
 import net.minecraftforge.fml.relauncher.SideOnly
@@ -188,6 +189,21 @@ object DTItems {
 	@JvmStatic
 	@GameRegistry.ObjectHolder("${DAMTest.MODID}:ice_breaker")
 	lateinit var iceBreaker: ItemIceBreaker
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:rainbow_porkchop")
+	lateinit var rawRainbowPorkchop: ItemRainbowPorkchop
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:cooked_rainbow_porkchop")
+	lateinit var cookedRainbowPorkchop: ItemCookedRainbowPorkchop
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:bacon")
+	lateinit var bacon: ItemBacon
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:rainbow_bacon")
+	lateinit var rainbowBacon: ItemRainbowBacon
+	@JvmStatic
+	@GameRegistry.ObjectHolder("${DAMTest.MODID}:lightning_bolt")
+	lateinit var lightningBolt: ItemLightningBolt
 
 	@JvmStatic
 	@SideOnly(Side.CLIENT)
@@ -228,16 +244,35 @@ object DTItems {
 				blazeLeggings,
 				blazeBoots,
 				iceShard,
-				iceBreaker
+				iceBreaker,
+				rawRainbowPorkchop,
+				cookedRainbowPorkchop,
+				bacon,
+				rainbowBacon,
+				lightningBolt
 		)) {
 			ModelLoader.setCustomModelResourceLocation(
 					i, 0, ModelResourceLocation(i.registryName!!, "inventory")
 			)
 		}
+		if(Loader.isModLoaded("baubles"))
+			for(i in arrayOf(
+					DTDependantItems.emptyPotionRing,
+					DTDependantItems.potionRing
+			)) {
+				ModelLoader.setCustomModelResourceLocation(
+						i, 0, ModelResourceLocation(i.registryName!!, "inventory")
+				)
+			}
 
 		ModelBakery.registerItemVariants(pack, *ItemPack.ItemMesh.getVariants())
 		ModelLoader.setCustomMeshDefinition(pack, ItemPack.ItemMesh())
 	}
+}
+
+object DTDependantItems {
+	lateinit var emptyPotionRing: ItemEmptyPotionRing
+	lateinit var potionRing: ItemPotionRing
 }
 
 object DTWorldGen : IWorldGenerator {
@@ -249,6 +284,7 @@ object DTWorldGen : IWorldGenerator {
 		}
 	}
 
+	@Suppress("SameParameterValue")
 	private fun generateOre(ore: IBlockState, world: World, random: Random, x: Int, z: Int, minY: Int, maxY: Int, size: Int, chances: Int) {
 		val deltaY = maxY - minY
 

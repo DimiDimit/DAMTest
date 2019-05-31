@@ -11,6 +11,7 @@ import net.dimitrodam.forgetest.guicontainer.GuiContainerFabricator;
 import net.dimitrodam.forgetest.tile.TileExtractor;
 import net.dimitrodam.forgetest.tile.TileFabricator;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.Loader;
 
 @JEIPlugin
 public class DAMTestJeiPlugin implements IModPlugin {
@@ -35,5 +36,7 @@ public class DAMTestJeiPlugin implements IModPlugin {
         registry.addRecipeClickArea(GuiContainerFabricator.class, 78, 32, 28, 23, FabricatorRecipeCategory.NAME);
 
         registry.addIngredientInfo(new ItemStack(DTItems.pack), VanillaTypes.ITEM, "item.damtest.pack.info");
+        if(Loader.isModLoaded("baubles"))
+            registry.addIngredientInfo(new ItemStack(DTDependantItems.potionRing), VanillaTypes.ITEM, "item.damtest.potion_ring.info");
     }
 }

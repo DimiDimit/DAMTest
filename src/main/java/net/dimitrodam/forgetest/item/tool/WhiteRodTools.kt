@@ -1,10 +1,12 @@
 package net.dimitrodam.forgetest.item.tool
 
 import net.dimitrodam.forgetest.DAMTest
+import net.dimitrodam.forgetest.util.DTItem.Companion.addInformation
 import net.dimitrodam.forgetest.util.DTItem.Companion.initWoTab
 import net.dimitrodam.forgetest.util.DTItemAxe
 import net.dimitrodam.forgetest.util.DTItemPickaxe
 import net.dimitrodam.forgetest.util.DTItemShovel
+import net.minecraft.client.util.ITooltipFlag
 import net.minecraft.entity.EntityLivingBase
 import net.minecraft.entity.player.EntityPlayer
 import net.minecraft.inventory.EntityEquipmentSlot
@@ -13,6 +15,7 @@ import net.minecraft.item.ItemHoe
 import net.minecraft.item.ItemStack
 import net.minecraft.item.ItemSword
 import net.minecraft.util.EntityDamageSource
+import net.minecraft.world.World
 
 class ItemWhiteRodSword : ItemSword(DAMTest.TOOL_MATERIAL_WHITE_ROD) {
 	init {
@@ -22,6 +25,10 @@ class ItemWhiteRodSword : ItemSword(DAMTest.TOOL_MATERIAL_WHITE_ROD) {
 	override fun hitEntity(stack: ItemStack, target: EntityLivingBase, attacker: EntityLivingBase): Boolean {
 		target.attackEntityFrom(if(attacker is EntityPlayer) EntityDamageSource.causePlayerDamage(attacker) else EntityDamageSource.causeMobDamage(attacker), 3.4028235E38F)
 		return super.hitEntity(stack, target, attacker)
+	}
+
+	override fun addInformation(stack: ItemStack, worldIn: World?, tooltip: MutableList<String>, flagIn: ITooltipFlag) {
+		addInformation(stack, tooltip)
 	}
 }
 

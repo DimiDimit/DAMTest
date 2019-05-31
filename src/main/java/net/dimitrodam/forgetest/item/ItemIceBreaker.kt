@@ -3,6 +3,7 @@ package net.dimitrodam.forgetest.item
 import net.dimitrodam.forgetest.DTItems
 import net.dimitrodam.forgetest.util.DTItem
 import net.minecraft.block.state.IBlockState
+import net.minecraft.client.util.ITooltipFlag
 import net.minecraft.entity.EntityLivingBase
 import net.minecraft.entity.item.EntityItem
 import net.minecraft.entity.player.EntityPlayer
@@ -57,5 +58,9 @@ class ItemIceBreaker : DTItem("ice_breaker") {
 
 	override fun getDestroySpeed(stack: ItemStack, state: IBlockState): Float {
 		return if(state.block == Blocks.ICE) 15.0f else super.getDestroySpeed(stack, state)
+	}
+
+	override fun addInformation(stack: ItemStack, worldIn: World?, tooltip: MutableList<String>, flagIn: ITooltipFlag) {
+		addInformation(stack, tooltip)
 	}
 }
